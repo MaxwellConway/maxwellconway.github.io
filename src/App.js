@@ -63,6 +63,16 @@ function App() {
               <div className="card-title">screengrab.maxconway.com</div>
               <div className="card-sub">Random movie screenshots</div>
             </a>
+
+            <a
+              className="card card-green"
+              href="https://eldenring.maxconway.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="card-title">eldenring.maxconway.com</div>
+              <div className="card-sub">Elden Ring weapons & spells</div>
+            </a>
           </section>
 
           <section className="resume-section">
