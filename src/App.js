@@ -83,6 +83,16 @@ function App() {
               <div className="card-title">gamernet.maxconway.com</div>
               <div className="card-sub">Gaming social network</div>
             </a>
+
+            <a
+              className="card card-green"
+              href="https://stemtool.maxconway.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="card-title">stemtool.maxconway.com</div>
+              <div className="card-sub">AI music stem separation</div>
+            </a>
           </section>
 
           <section className="resume-section">
