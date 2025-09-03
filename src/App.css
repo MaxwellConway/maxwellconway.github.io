@@ -960,16 +960,18 @@ button {
   }
 }
 
-/* ===== Minimal Redesign Styles (Red/White/Black Theme) ===== */
+/* ===== Minimal Redesign Styles (Dark Theme with Green Highlights) ===== */
 .minimal-app {
-  /* Minimal theme tokens */
-  --primary: #991B1B;         /* darker red */
-  --primary-dark: #7F1D1D;    /* deeper red for hover/borders */
-  --fg: #111111;              /* near-black text */
-  --muted: #6B7280;           /* gray-500 */
-  --border: #E5E7EB;          /* gray-200 */
-  --card-bg: #FFFFFF;         /* white cards */
-  background-color: #FFFFFF;
+  /* Dark theme tokens with green highlights */
+  --primary: #22C55E;         /* green-500 */
+  --primary-dark: #16A34A;    /* green-600 for hover/borders */
+  --primary-light: #4ADE80;   /* green-400 for lighter accents */
+  --fg: #FFFFFF;              /* white text */
+  --muted: #9CA3AF;           /* gray-400 */
+  --border: #374151;          /* gray-700 */
+  --card-bg: #1F2937;         /* gray-800 cards */
+  --bg-secondary: #111827;    /* gray-900 secondary background */
+  background-color: #0F172A;  /* almost black background */
   color: var(--fg);
   min-height: 100vh;
 }
@@ -985,7 +987,7 @@ button {
   align-items: end;
   border-bottom: 1px solid var(--primary-dark);
   position: relative;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
 .site-header .container {
@@ -1010,6 +1012,11 @@ button {
   padding: 2.5rem 0 3rem;
 }
 
+.content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 /* subtle separators between major sections */
 .site-main section + section {
   margin-top: 2.5rem;
@@ -1030,15 +1037,15 @@ button {
   border-radius: 12px;
   border: 1px solid var(--border);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-  color: #111111;
-  background: linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 100%);
+  color: var(--fg);
+  background: var(--card-bg);
   position: relative;
   overflow: hidden; /* ensure ::before accent respects rounded corners */
 }
 
 .card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.4);
   border-color: var(--primary);
 }
 
@@ -1084,13 +1091,18 @@ button {
 }
 
 .card-sub {
-  color: #666666;
+  color: var(--muted);
   font-size: 0.95rem;
 }
 
-/* Red accent cards */
-.card-yellow { background: #FEE2E2; border-color: var(--primary); }
-.card-purple { background: #FEE2E2; border-color: var(--primary); }
+/* Green accent cards */
+.card-green { 
+  background: var(--card-bg); 
+  border-color: var(--border); 
+}
+.card-green:hover {
+  border-color: var(--primary);
+}
 
 .section-title {
   font-size: clamp(1.25rem, 1.1rem + 1vw, 1.75rem);
@@ -1121,11 +1133,11 @@ button {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 .resume-placeholder {
-  color: #666666;
+  color: var(--muted);
   text-align: center;
 }
 
@@ -1146,7 +1158,7 @@ button {
   gap: 0.4rem;
   padding: 0.6rem 0.9rem;
   border: 1px solid var(--border);
-  background: #FFFFFF;
+  background: var(--card-bg);
   color: var(--fg);
   border-radius: 8px;
   font-weight: 600;
@@ -1166,7 +1178,7 @@ button {
 }
 
 .btn-outline {
-  background: #FFFFFF;
+  background: var(--card-bg);
   border-color: var(--border);
   color: var(--fg);
 }
@@ -1197,24 +1209,24 @@ button {
   border: 1px solid var(--border);
   border-radius: 12px;
   background: #FFFFFF;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 .download-btn {
   background: var(--primary);
-  color: #FFFFFF;
+  color: #000000;
   padding: 0.75rem 1.25rem;
   border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
   border: 1px solid var(--primary-dark);
-  box-shadow: 0 1.5px 3px rgba(0,0,0,0.08);
+  box-shadow: 0 1.5px 3px rgba(0,0,0,0.2);
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .download-btn:hover {
   background: var(--primary-dark);
-  color: #FFFFFF;
+  color: #000000;
   transform: translateY(-1px);
 }
 
@@ -1246,7 +1258,7 @@ button {
 }
 
 .contact-item a {
-  color: #000000;
+  color: var(--fg);
   text-decoration: none;
 }
 
@@ -1257,8 +1269,9 @@ button {
 .site-footer {
   margin-top: 2.5rem;
   padding: 1.5rem 0;
-  background: #000000;
-  color: #FFFFFF;
+  background: var(--bg-secondary);
+  color: var(--fg);
+  border-top: 1px solid var(--border);
 }
 
 .site-footer .container {
